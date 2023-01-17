@@ -31,11 +31,39 @@ class dashboardController extends Controller
        }
    }
 
+   public function add_product()
+   {
+       if (isset($_POST['submit'])) {
+       
+           $name = $_POST['name'];
+           $price = $_POST['price'];
+           $quantity = $_POST['quantity'];
+           $description = $_POST['description'];
+           
+           $this->productsModel->insertproduct($name,$price ,$quantity ,$description);
+           $this->view('add_product');
+       }else{
+           $this->view('add_product');
+       }
+    //    $products = $this->productsModel->getproduct();
+    //    $data = [
+    //        'products' => $products
+    //            ];
+    //    $this->view('dashboard',$data);
+       
+   }
+
 
    public function delete_product($id)
    {
        $this->productsModel->delete_product($id);
-       $this->view("dashboard");
+
+       $products = $this->productsModel->getproduct();
+           $data = [
+               'products' => $products
+                   ];
+           $this->view('dashboard',$data);
+       
     
    }
 }

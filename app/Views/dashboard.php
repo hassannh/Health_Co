@@ -33,5 +33,5 @@
             <?php endforeach; ?>
         </table>
     </div>
-    <a href="items.php?do=Add" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New Item</a>
+    <a href="<?= URLROOT?>dashboardController/add_product" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New Item</a>
 </div>
