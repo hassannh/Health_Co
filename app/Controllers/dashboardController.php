@@ -34,17 +34,20 @@ class dashboardController extends Controller
    public function add_product()
    {
        if (isset($_POST['submit'])) {
-       
+   
+   
            $name = $_POST['name'];
            $price = $_POST['price'];
            $quantity = $_POST['quantity'];
-           $description = $_POST['description'];
-           
+           $description = $_POST['Description'];
+        
            $this->productsModel->insertproduct($name,$price ,$quantity ,$description);
-           $this->view('add_product');
+           $this->view('dashboard');
+        
        }else{
            $this->view('add_product');
        }
+       
     //    $products = $this->productsModel->getproduct();
     //    $data = [
     //        'products' => $products

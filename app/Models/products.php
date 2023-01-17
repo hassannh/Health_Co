@@ -23,11 +23,15 @@ public function getproduct()
 
     public function insertproduct($name,$price ,$quantity ,$description)
     {
-        $this->db->query("INSERT INTO 'products'('name','price','quantity','description') VALUES(:name, :price, :quantity, :description)");
+       
+        $sql = "INSERT INTO products (name ,price, quantity, Description ) VALUES (:name, :price, :quantity, :description)";
+        $this->db->query($sql);
         $this->db->bind(':name',$name);
         $this->db->bind(':price',$price);
         $this->db->bind(':quantity',$quantity);
         $this->db->bind(':description',$description);
+        // var_dump($this->db);
+        // die;
         $this->db->execute();
     }
 

@@ -1,5 +1,5 @@
 
-<h1 class="text-center push">Manage Items</h1>
+<h1 class="text-center push">Manage Products</h1>
 <pre>
 </pre>
 <div class="container">
