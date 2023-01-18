@@ -12,11 +12,10 @@ public function __construct()
 //find user by email
 public function getUserByEmail($email)
 {
-    $this->db->query("SELECT * FROM admin WHERE email=:email");
+    $this->db->query("SELECT * FROM admin WHERE email =:email");
     $this->db->bind(":email",$email);
     $this->db->execute(); 
     $fetch = $this->db->fetch();
-
     if($this->db->rowCount() > 0){
         return true;
     }else{
@@ -24,15 +23,18 @@ public function getUserByEmail($email)
     }
 
 }
-public function login($email, $password){
+public function login($email, $password)
+{
     $this->db->query('SELECT * FROM admin WHERE email = :email');
     $this->db->bind(':email', $email);
 
     $result = $this->db->fetch();
 
-    $hashed_password = $result->password;
-
-    if(password_verify($password, $hashed_password)){
+    // $hashed_password = $result->password;
+// password_verify($password, $result->password)
+var_dump($password. ' | ' . $result->password);
+// die;
+    if($password ==  $result->password){
         return $result;
     } else{
         return false;

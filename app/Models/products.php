@@ -20,6 +20,17 @@ public function getproduct()
       
     }
 
+    public function get_one_product($id)
+    {
+       
+       
+        $this->db->query("SELECT * FROM products WHERE ID_product = :id");
+        $this->db->bind(':id',$id);
+        $this->db->execute();
+        return $this->db->fetch();
+        
+    }
+
 
     public function insertproduct($name,$price ,$quantity ,$description)
     {

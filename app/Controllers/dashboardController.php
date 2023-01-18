@@ -9,6 +9,20 @@ class dashboardController extends Controller
         $this->productsModel = $this->model('products');
         
     }
+
+    public function edit_product($id)
+    {
+        
+        $product = $this->productsModel->get_one_product($id);
+        if ($product) {
+            $data = [
+                'product' => $product
+                    ];
+            $this->view('edit_product',$data);
+        } else {
+            echo('product not found');
+        }
+    }
   
 
     public function dashboard()
@@ -23,8 +37,6 @@ class dashboardController extends Controller
            $data = [
                'products' => $products
                    ];
-                //    var_dump($data);
-                //     exit;
            $this->view('dashboard',$data);
        } else {
            echo('product not found');
@@ -42,7 +54,8 @@ class dashboardController extends Controller
            $description = $_POST['Description'];
         
            $this->productsModel->insertproduct($name,$price ,$quantity ,$description);
-           $this->view('dashboard');
+        //    $this->view('dashboard');
+        header("location: ". URLROOT ."dashboardController/dashboard");
         
        }else{
            $this->view('add_product');

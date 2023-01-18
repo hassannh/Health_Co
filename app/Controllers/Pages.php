@@ -69,4 +69,14 @@ class Pages extends Controller
     
         $this->view('register', $data);
     }
+
+    public function statistics()
+    {
+    
+        $data = [
+            'title' => 'statistics'
+        ];
+    
+        $this->view('statistics', $data);
+    }
 }

@@ -25,7 +25,7 @@
              <td><?= $products->quantity?></td>
              <td><?= $products->Description?></td>
              <td style=" GAP: 10PX; DISPLAY: flex; FLEX-WRAP: WRAP; JUSTIFY-CONTENT: center;" class="controol">
-             <a href='' class='btn btn-success'><i class='fa fa-edit'></i> Edit</a>
+             <a href='<?=URLROOT?>dashboardController/edit_product/<?= $products->ID_product?>' class='btn btn-success'><i class='fa fa-edit'></i> Edit</a>
              <a href='<?=URLROOT?>dashboardController/delete_product/<?= $products->ID_product?>' class='btn btn-danger confirm'><i class='fa fa-close'></i> Delete </a>
              </td>
              </tr>

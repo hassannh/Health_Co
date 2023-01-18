@@ -15,51 +15,30 @@ class AdminController extends Controller
 
             $_POST = filter_input_array(INPUT_POST);
             $data = [
-                'email' => trim($_POST['email']),
-                'password' => trim($_POST['password']),
-                'email_error' => '',
-                'password_error' => ''
+                'email' =>$_POST['email'],
+                'password' =>$_POST['password']
+               
             ];
-
-            
-
-            if (empty($data['email'])) {
-                $data['email_error'] = 'please enter your email';
-            }
+          $check = $this->AdminModel->getUserByEmail($data['email']);
         
-            if (empty($data['password'])) {
-                $data['password_error'] = 'please enter your password';
-            }
-        
-            if ($this->AdminModel->getUserByEmail($data['email'])) {
+            if ($check == 1) {
                 // user found
-                
-            } else {
-                // User not found
-                $data['email_error'] = 'No user found';
-            }
-        
-            if (empty($data['email_error']) && empty($data['password_error'])) {
-                // Validated
-                // Check and set logged in user
                 $loggedInUser = $this->AdminModel->login($data['email'], $data['password']);
         
                 if ($loggedInUser) {
                     // Create session
                       $this->createUserSession($loggedInUser);
-                      $this->view('home');
-                } else {
-                    $data['password_error'] = 'Incorrect password';
-                    $this->view('login', $data);
+                      header("location:".URLROOT."dashboardController/dashboard");
+                } else{
+                    $this->view("login");
                 }
-            } else {
-                // Load view with errors
-                $this->view('login', $data);
-            }
+
+}  else {
         
-            $email = $data['email'];
-            $password = $data['password'];
-      
+            // Load view
+            $this->view('login');
+        }
+
         } else {
         
             // Load view
@@ -72,6 +51,5 @@ class AdminController extends Controller
         $_SESSION['email'] = $Admin->email;
         $_SESSION['name'] = $Admin->name;
         
-       
       }
 }
