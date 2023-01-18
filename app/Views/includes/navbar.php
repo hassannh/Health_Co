@@ -18,7 +18,7 @@
           <a class="nav-link" href="dashboard">dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="=">hello</a>
+          <a class="nav-link" href="<?=URLROOT?>AdminController/logout">LogOut</a>
         </li>
       </ul>
     </div>

@@ -9,8 +9,8 @@
 class Core
 {
 
-    private $Controller = 'Pages';
-    private $method = 'login';
+    private $Controller = 'AdminController';
+    private $method = 'register';
     private $param = [];
 
     public function __construct()

@@ -1,6 +1,6 @@
 <div class="col-md-12">
 
-  <form method="post" action="home">
+  <form method="post" action="login">
     <div class="form-group col-md-12">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" name="email" style="width: 50%;" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

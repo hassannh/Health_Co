@@ -30,10 +30,6 @@ public function login($email, $password)
 
     $result = $this->db->fetch();
 
-    // $hashed_password = $result->password;
-// password_verify($password, $result->password)
-var_dump($password. ' | ' . $result->password);
-// die;
     if($password ==  $result->password){
         return $result;
     } else{
@@ -42,14 +38,13 @@ var_dump($password. ' | ' . $result->password);
 }
 
 public function register($data){
-    $this->db->query('INSERT INTO admin (name, email, password)VALUES (:name, :email, :password)');
+    $this->db->query('INSERT INTO admin (name, email, password) VALUES (:name, :email, :password)');
 
     // Bind values
     $this->db->bind(':name', $data['name']);
-
     $this->db->bind(':email', $data['email']);
     $this->db->bind(':password', $data['password']);
-
+    $this->db->execute();
     // Execute
     if($this->db->execute()){
         return true;

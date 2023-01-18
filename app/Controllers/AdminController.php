@@ -9,6 +9,38 @@ class AdminController extends Controller
     }
 
 
+
+
+    public function register()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // die('heyyyyyy');
+
+            $_POST = filter_input_array(INPUT_POST);
+
+            //init data
+            $data = [
+                'name' =>$_POST['name'],
+                'email' =>$_POST['email'],
+                'password' =>$_POST['password']
+            ];
+   
+            
+            $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+
+              // Register User
+        if ($this->AdminModel->register($data)) {
+            header("location:".URLROOT. "AdminController/login");
+        } else {
+          die('Something went wrong');
+        }
+    }else{
+        $this->view("register");
+    }
+}
+
+
     public function login()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -51,5 +83,12 @@ class AdminController extends Controller
         $_SESSION['email'] = $Admin->email;
         $_SESSION['name'] = $Admin->name;
         
+      }
+
+
+      public function logout()
+      {
+        session_destroy();
+        header("location".URLROOT."AdminController/login");
       }
 }
