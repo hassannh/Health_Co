@@ -1,5 +1,5 @@
 
-<div class="col-md-10 mt-6 ">
+<div class="col-md-10 mx-auto mt-3 ">
     <div class="row ">
         <div class="col-xl-3 col-lg-6">
             <div class="card l-bg-cherry">
@@ -41,5 +41,5 @@
                 </div>
             </div>
         </div>
-       
+    </div>
 </div>

@@ -76,6 +76,11 @@ class dashboardController extends Controller
        
    }
 
+   public function home()
+   {
+    $this->view('home');
+   }
+
 
    public function delete_product($id)
    {
