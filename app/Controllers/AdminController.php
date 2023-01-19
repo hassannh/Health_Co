@@ -21,24 +21,24 @@ class AdminController extends Controller
 
             //init data
             $data = [
-                'name' =>$_POST['name'],
-                'email' =>$_POST['email'],
-                'password' =>$_POST['password']
+                'name' => $_POST['name'],
+                'email' => $_POST['email'],
+                'password' => $_POST['password']
             ];
-   
-            
+
+
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-              // Register User
-        if ($this->AdminModel->register($data)) {
-            header("location:".URLROOT. "AdminController/login");
+            // Register User
+            if ($this->AdminModel->register($data)) {
+                header("location:" . URLROOT . "AdminController/login");
+            } else {
+                die('Something went wrong');
+            }
         } else {
-          die('Something went wrong');
+            $this->view("register");
         }
-    }else{
-        $this->view("register");
     }
-}
 
 
     public function login()
@@ -47,48 +47,50 @@ class AdminController extends Controller
 
             $_POST = filter_input_array(INPUT_POST);
             $data = [
-                'email' =>$_POST['email'],
-                'password' =>$_POST['password']
-               
+                'email' => $_POST['email'],
+                'password' => $_POST['password']
+
             ];
-          $check = $this->AdminModel->getUserByEmail($data['email']);
-        
+            $check = $this->AdminModel->getUserByEmail($data['email']);
+
+          
             if ($check == 1) {
                 // user found
                 $loggedInUser = $this->AdminModel->login($data['email'], $data['password']);
-        
+                
                 if ($loggedInUser) {
                     // Create session
-                      $this->createUserSession($loggedInUser);
-                      header("location:".URLROOT."dashboardController/dashboard");
-                } else{
+                    $this->createUserSession($loggedInUser);
+                    header("location:" . URLROOT . "dashboardController/dashboard");
+                } else {
                     $this->view("login");
                 }
+            } else {
 
-}  else {
-        
-            // Load view
-            $this->view('login');
-        }
-
+                // Load view
+                $this->view('login');
+            }
         } else {
-        
+
             // Load view
             $this->view('login');
         }
-        
     }
-    public function createUserSession($Admin){
-        $_SESSION['Id'] = $Admin->ID;
-        $_SESSION['email'] = $Admin->email;
-        $_SESSION['name'] = $Admin->name;
-        
-      }
+    public function createUserSession($Admin)
+    {
+        $_SESSION['Id'] = $Admin['ID'];
+        $_SESSION['email'] = $Admin['email'];
+        $_SESSION['name'] = $Admin['name'];
+    }
 
 
-      public function logout()
-      {
+    public function logout()
+    {
         session_destroy();
-        header("location".URLROOT."AdminController/login");
-      }
+        header("location: " . URLROOT . "AdminController/login");
+    }
+    public static function isLogged()
+    {
+        return $_SESSION['Id'] ?? false;
+    }
 }

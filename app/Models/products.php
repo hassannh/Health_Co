@@ -46,6 +46,22 @@ public function getproduct()
         $this->db->execute();
     }
 
+    public function price_product()
+    {
+        $this->db->query('SELECT SUM(price) FROM products');
+        $this->db->execute();
+        $count = $this->db->fetchColumn();
+        return $count;
+    }
+    public function products_number()
+    {
+        $this->db->query("SELECT COUNT(*) FROM products");
+
+        $this->db->execute();
+
+        return $this->db->fetchColumn();
+    }
+
     public function delete_product ($id){
        
         $this->db->query("DELETE FROM products WHERE ID_product = :id");

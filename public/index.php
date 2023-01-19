@@ -6,6 +6,7 @@ require_once "../app/libraries/database.php";
 require_once "../app/libraries/Core.php";
 require_once "../app/libraries/database.php";
 require_once "../app/libraries/Controller.php";
+require_once "../app/Controllers/AdminController.php";
 require_once "../app/Views/includes/head.php";
 require_once "../app/Views/includes/navbar.php";
 

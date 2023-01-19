@@ -63,13 +63,17 @@ class database {
         public function fetchAll()
         {
             $this->stmt->execute();
-            return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+            return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     
         public function fetch()
         {
             $this->stmt->execute();
-            return $this->stmt->fetch(PDO::FETCH_OBJ);
+            return $this->stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        public function fetchcolumn()
+        {
+            return $this->stmt->fetchcolumn();
         }
         //row count
         public function rowCount()

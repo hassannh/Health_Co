@@ -20,7 +20,7 @@ class dashboardController extends Controller
                     ];
             $this->view('edit_product',$data);
         } else {
-            echo('product not found');
+            echo('product not founddd');
         }
     }
   
@@ -43,6 +43,19 @@ class dashboardController extends Controller
        }
    }
 
+
+   public function statistics()
+   { 
+     $products_price = $this->productsModel->price_product();
+     $products_number = $this->productsModel->products_number();
+     $data = [
+        'price'=> $products_price ,
+        'number'=> $products_number
+     ];
+
+     $this->view('statistics',$data);
+   }
+
    public function add_product()
    {
        if (isset($_POST['submit'])) {
@@ -60,12 +73,6 @@ class dashboardController extends Controller
        }else{
            $this->view('add_product');
        }
-       
-    //    $products = $this->productsModel->getproduct();
-    //    $data = [
-    //        'products' => $products
-    //            ];
-    //    $this->view('dashboard',$data);
        
    }
 

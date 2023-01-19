@@ -7,16 +7,20 @@
         </div>
 
         <div class="col-md-12 mt-3">
-            <input style="width: 50%;" class="form-control" type="" name="price" placeholder="price" required>
+            <input style="width: 50%;" class="form-control" type="number" name="price" placeholder="price" required>
         </div>
 
         <div class="col-md-12 mt-3">
-            <input style="width: 50%;" class="form-control" type="" name="Description" placeholder="description" required>
+            <input style="width: 50%;" class="form-control" type="date" name="date" placeholder="date">
+        </div>
+
+        <div class="col-md-12 mt-3">
+            <input style="width: 50%;" class="form-control" type="text" name="Description" placeholder="description" required>
 
         </div>
 
         <div class="col-md-12 mt-3">
-            <input style="width: 50%;" class="form-control" type="" name="quantity" placeholder="quantity" required>
+            <input style="width: 50%;" class="form-control" type="number" name="quantity" placeholder="quantity" required>
         </div>
 
 

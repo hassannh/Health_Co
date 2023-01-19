@@ -15,7 +15,8 @@ public function getUserByEmail($email)
     $this->db->query("SELECT * FROM admin WHERE email =:email");
     $this->db->bind(":email",$email);
     $this->db->execute(); 
-    $fetch = $this->db->fetch();
+    $this->db->fetch();
+
     if($this->db->rowCount() > 0){
         return true;
     }else{
@@ -27,10 +28,10 @@ public function login($email, $password)
 {
     $this->db->query('SELECT * FROM admin WHERE email = :email');
     $this->db->bind(':email', $email);
-
+    $this->db->execute();
     $result = $this->db->fetch();
 
-    if($password ==  $result->password){
+    if(password_verify($password ,$result['password'])){
         return $result;
     } else{
         return false;

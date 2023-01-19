@@ -24,6 +24,6 @@
     <button name="submit" type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
-<button name="login" href="<?=URLROOT?>AdminController/login" class="btn mt-3">sing in</button>
+<a name="login" href="<?=URLROOT?>AdminController/login" class="btn mt-3">sing in</a>
 
 
