@@ -20,6 +20,13 @@
         </div>
 
         <div class="col-md-12 mt-3">
+        <!-- <label class="input-group-text label_item" for="img_item">Image de produit</label> -->
+        <input class="form-control" type="file" name="picture" accept="image/png, image/jpeg, image/jpg"
+        placeholder="picture" required="required">
+
+    </div>
+
+        <div class="col-md-12 mt-3">
             <input style="width: 50%;" class="form-control" type="number" name="quantity" placeholder="quantity" required>
         </div>
 

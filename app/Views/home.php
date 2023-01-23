@@ -2,7 +2,7 @@
 
 
 <div class="container1">
-    <div>
+    <div class="home_p">
         <img style="width: 50%;" src="../public/image/products.jpg" alt="products-picture">
     </div>
     <div>

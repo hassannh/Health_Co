@@ -64,9 +64,10 @@ class dashboardController extends Controller
            $name = $_POST['name'];
            $price = $_POST['price'];
            $quantity = $_POST['quantity'];
+           $picture = $_POST['picture'];
            $description = $_POST['Description'];
         
-           $this->productsModel->insertproduct($name,$price ,$quantity ,$description);
+           $this->productsModel->insertproduct($name,$price ,$quantity,$picture ,$description);
         //    $this->view('dashboard');
         header("location: ". URLROOT ."dashboardController/dashboard");
         

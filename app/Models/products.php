@@ -32,14 +32,15 @@ public function getproduct()
     }
 
 
-    public function insertproduct($name,$price ,$quantity ,$description)
+    public function insertproduct($name,$price ,$quantity,$picture ,$description)
     {
        
-        $sql = "INSERT INTO products (name ,price, quantity, Description ) VALUES (:name, :price, :quantity, :description)";
+        $sql = "INSERT INTO `products` (name ,price, quantity, `picture`, Description ) VALUES (:name, :price, :quantity,:picture, :description)";
         $this->db->query($sql);
         $this->db->bind(':name',$name);
         $this->db->bind(':price',$price);
         $this->db->bind(':quantity',$quantity);
+        $this->db->bind(':picture',$picture);
         $this->db->bind(':description',$description);
         // var_dump($this->db);
         // die;

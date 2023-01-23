@@ -16,12 +16,10 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">
-                        Company name
+                        CureCO
                     </h6>
                     <p>
-                        Here you can use rows and columns to organize your footer
-                        content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
+                        Our company can help you to find <br> your need in modical products
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -32,16 +30,13 @@
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
                     <p>
-                        <a class="text-white">MDBootstrap</a>
+                        <a class="text-white">Medical Products</a>
                     </p>
                     <p>
-                        <a class="text-white">MDWordPress</a>
+                        <a class="text-white">Body health</a>
                     </p>
                     <p>
-                        <a class="text-white">BrandFlow</a>
-                    </p>
-                    <p>
-                        <a class="text-white">Bootstrap Angular</a>
+                        <a class="text-white">Scane Health</a>
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -54,14 +49,12 @@
                         Useful links
                     </h6>
                     <p>
-                        <a class="text-white">Your Account</a>
+                        <a class="text-white">ParaPharmacy.com</a>
                     </p>
                     <p>
-                        <a class="text-white">Become an Affiliate</a>
+                        <a class="text-white">ScaneHealth.com</a>
                     </p>
-                    <p>
-                        <a class="text-white">Shipping Rates</a>
-                    </p>
+                    
                     <p>
                         <a class="text-white">Help</a>
                     </p>
@@ -73,10 +66,10 @@
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                    <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                    <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                    <p><i class="fas fa-home mr-3"></i> AGADIR, HS 1254, MOROCCO</p>
+                    <p><i class="fas fa-envelope mr-3"></i> Cureco@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> + 07 234 567 88</p>
+                    <p><i class="fas fa-print mr-3"></i> + 07 234 567 89</p>
                 </div>
                 <!-- Grid column -->
             </div>
