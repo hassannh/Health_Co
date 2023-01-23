@@ -9,7 +9,7 @@
                 <td>#ID</td>
                 <td>Name</td>
                 <td>Price</td>
-                <td>Adding Date</td>
+               
                 <td>Quantity</td>
                 <td>Description</td>
                 <td>Control</td>
@@ -21,11 +21,11 @@
              <td><?= $products['ID_product'] ?></td>
              <td><?= $products['name']?></td>
              <td><?= $products['price']?></td>
-             <td><?= $products['date']?></td>
+             
              <td><?= $products['Description']?></td>
              <td><?= $products['quantity']?></td>
              <td style=" GAP: 10PX; DISPLAY: flex; FLEX-WRAP: WRAP; JUSTIFY-CONTENT: center;" class="controol">
-             <a href='<?=URLROOT?>dashboardController/edit_product/<?= $products['ID_product']?>' class='btn btn-success'><i class='fa fa-edit'></i> Edit</a>
+             <a href='<?=URLROOT?>dashboardController/getedit/<?= $products['ID_product']?>' class='btn btn-success'><i class='fa fa-edit'></i> Edit</a>
              <a href='<?=URLROOT?>dashboardController/delete_product/<?= $products['ID_product']?>' class='btn btn-danger confirm'><i class='fa fa-close'></i> Delete </a>
              </td>
              </tr>

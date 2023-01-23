@@ -23,12 +23,10 @@ public function getproduct()
     public function get_one_product($id)
     {
        
-       
-        $this->db->query("SELECT * FROM products WHERE ID_product = :id");
+        $this->db->query("SELECT * FROM `products` WHERE ID_product = :id");
         $this->db->bind(':id',$id);
         $this->db->execute();
-        return $this->db->fetch();
-        
+        return $this->db->fetchAll();
     }
 
 
@@ -42,9 +40,27 @@ public function getproduct()
         $this->db->bind(':quantity',$quantity);
         $this->db->bind(':picture',$picture);
         $this->db->bind(':description',$description);
-        // var_dump($this->db);
-        // die;
         $this->db->execute();
+    }
+
+
+
+    public function updat_products($id ,$data)
+    {
+        $sql = "UPDATE products SET `name` = :name ,`description` = :description, `price` = :price, `picture` = :picture,`quantity` = :quantity WHERE `ID_product` = :id" ;
+        $this->db->query($sql);
+        $this->db->bind(':id',$id);
+        $this->db->bind(':name',$data['name']);
+        $this->db->bind(':description',$data['description']);
+        $this->db->bind(':price',$data['price']);
+        $this->db->bind(':picture',$data['picture']);
+        $this->db->bind(':quantity',$data['quantity']);
+        $bol = $this->db->execute();
+        if($bol){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function price_product()

@@ -15,7 +15,7 @@
         <a class="nav-link mx-3 text-white fs-4" href="<?= URLROOT ?>dashboardController/statistics">statistics</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mx-3 text-white fs-4" href="dashboard">dashboard</a>
+        <a class="nav-link mx-3 text-white fs-4" href="<?= URLROOT ?>dashboardController/dashboard">dashboard</a>
       </li>
       <li class="nav-item">
         <?php if (AdminController::isLogged()) : ?>
