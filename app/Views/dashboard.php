@@ -9,7 +9,7 @@
                 <td>#ID</td>
                 <td>Name</td>
                 <td>Price</td>
-               
+                <td>Date</td>
                 <td>Quantity</td>
                 <td>Description</td>
                 <td>Control</td>
@@ -18,12 +18,15 @@
             <?php foreach ($data["products"] as $products) :?>
 
              <tr>
-             <td><?= $products['ID_product'] ?></td>
-             <td><?= $products['name']?></td>
-             <td><?= $products['price']?></td>
-             
-             <td><?= $products['Description']?></td>
-             <td><?= $products['quantity']?></td>
+             <td><?php echo $products['ID_product']; ?></td>
+             <td><?php echo $products['name'];?></td>
+             <td><?php echo $products['price'];?></td>
+             <td><?php echo $products['date'];?></td>
+             <td><?php echo $products['quantity'];?></td>
+             <td><?php echo $products['Description'];?></td>
+
+            
+
              <td style=" GAP: 10PX; DISPLAY: flex; FLEX-WRAP: WRAP; JUSTIFY-CONTENT: center;" class="controol">
              <a href='<?=URLROOT?>dashboardController/getedit/<?= $products['ID_product']?>' class='btn btn-success'><i class='fa fa-edit'></i> Edit</a>
              <a href='<?=URLROOT?>dashboardController/delete_product/<?= $products['ID_product']?>' class='btn btn-danger confirm'><i class='fa fa-close'></i> Delete </a>
@@ -33,5 +36,5 @@
             <?php endforeach; ?>
         </table>
     </div>
-    <a href="<?= URLROOT?>dashboardController/add_product" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New Item</a>
+    <a href="<?= URLROOT?>Pages/add_product" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New Item</a>
 </div>
