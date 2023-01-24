@@ -48,15 +48,15 @@ public function getproduct()
     //     }
     // }
 
-    function insertproduct($name, $price, $quantity,$description)
+    function insertproduct($name, $price, $quantity,$description,$picture)
     {
-        $this->db->query("INSERT INTO `products` (name ,price, quantity, Description ) VALUES (:name, :price, :quantity, :description)");
+        $this->db->query("INSERT INTO `products` (name ,price, quantity, Description,picture ) VALUES (:name, :price, :quantity, :description,:picture)");
         $this->db->bind(":name", $name);
         $this->db->bind(":price", $price);
         // $this->db->bind(":date", $date);
         $this->db->bind(":quantity", $quantity);
         $this->db->bind(":description", $description);
-        // $this->db->bind(":picture", $picture);
+        $this->db->bind(":picture", $picture);
 
         if ($this->db->execute())
             return TRUE;

@@ -12,6 +12,9 @@
         <a class="nav-link mx-3 text-white fs-4" aria-current="page" href="home">Home</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link mx-3 text-white fs-4" aria-current="page" href="<?= URLROOT ?>dashboardController/gallery">gallery</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link mx-3 text-white fs-4" href="<?= URLROOT ?>dashboardController/statistics">statistics</a>
       </li>
       <li class="nav-item">

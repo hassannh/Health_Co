@@ -52,7 +52,14 @@ class dashboardController extends Controller
 
 
 
-
+    public function gallery()
+    {
+        $products = $this->productsModel->getproduct();
+        $data=[
+            'products'=>$products
+        ];
+        $this->view('gallery',$data);
+    }
 
 
 
@@ -128,7 +135,7 @@ class dashboardController extends Controller
     public function add_product()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+         
             if(isset($_POST["submit"])){
 
                 
@@ -136,7 +143,7 @@ class dashboardController extends Controller
                 $_POST = filter_input_array(INPUT_POST);
 
                 
-                for ($i = 0; $i < count($_POST["name"]); $i++) {
+                for($i = 0; $i < count($_POST["name"]); $i++) {
                     
                     // $filename = $_FILES["Picture"]["name"][$i];
                     // $tempname = $_FILES["Picture"]["tmp_name"][$i];
@@ -148,15 +155,11 @@ class dashboardController extends Controller
                     // $date = $_POST['date'][$i];
                     $Quantity = $_POST['quantity'][$i];
                     $description = $_POST['Description'][$i];
-                    // $picture = $_POST['Picture'][$i];
+                    $picture = $_POST['picture'][$i];
                     
                     
-                    // echo '<pre>';
-                    // var_dump($picture);
-                    // echo '</pre>';
-                    // exit;
                 // move_uploaded_file($tempname, $folder);
-                $this->productsModel->insertproduct($name, $price, $Quantity,$description);
+                $this->productsModel->insertproduct($name, $price, $Quantity,$description,$picture);
             }
             header('location:' . URLROOT . '/dashboardController/dashboard');
             }

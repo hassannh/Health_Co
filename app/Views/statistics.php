@@ -1,5 +1,17 @@
 
+    <!-- For demo purpose -->
+    <div class="row py-5 bg-secondary ">
+        <div class="col-lg-12 mx-auto">
+          <div class="text-white p-5 shadow-sm rounded banner">
+            <h1 class="display-4">Welcome To Your Statistics</h1>
+            <p class="lead">Here You Can Find All Statistics</p>
+            
+          </div>
+        </div>
+      </div>
+      <!-- End -->
 <div class="col-md-10 mx-auto mt-3 ">
+
     <div class="row ">
         <div class="col-xl-3 col-lg-6">
             <div class="card l-bg-cherry">
