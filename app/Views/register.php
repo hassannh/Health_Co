@@ -20,9 +20,10 @@
         <label for="exampleInputPassword1" class="inputWidth">Password</label>
         <input type="password" name="password" class="form-control inputWidth" id="exampleInputPassword1" placeholder="Password">
     </div>
- 
-    <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+ <div class="d-flex">
+    <button name="submit" type="submit" class="btn btn-primary mt-3">Submit</button><br>
     <a name="login" href="<?=URLROOT?>AdminController/login" class="btn btn-primary mt-3">sing in</a>
+</div>  
 </form>
 </div>
 

@@ -1,6 +1,6 @@
 <div class="row py-5 bg-secondary">
     <div class="col-lg-12 mx-auto">
-        <div class="text-white p-5 shadow-sm rounded banner">
+        <div class="text-white p-5 shadow-sm rounded">
             <h1 class="display-4">Welcome To Your Gallery</h1>
             <p class="lead">Here is Your Products</p>
         </div>

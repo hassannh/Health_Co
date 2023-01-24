@@ -12,6 +12,7 @@
     </div>
     <div class="col-md-12">
       <button name="submit" style="width: 30%;" type="submit" class="btn btn-primary">Submit</button>
+      <a name="register" href="<?=URLROOT?>AdminController/register" class="btn btn-primary mt-3">singUP</a>
     </div>
   </form>
 

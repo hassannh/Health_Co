@@ -1,9 +1,8 @@
 
 
-
 document.getElementById("addNew").addEventListener("click", () => {
     var html = '<div class="form-items">'
-    html +='<h3 class="col-md-12">Add you product Today</h3>'
+    html +='<h3 class="col-md-12">Add another product</h3>'
 
 
     html += '<div class="col-md-12 mt-3">'
@@ -42,11 +41,19 @@ document.getElementById("addNew").addEventListener("click", () => {
 
 
 
-// var forms = document.querySelectorAll("form");
-// var data = {};
-// forms.forEach(function(form) {
-//     var inputs = form.getElementsByTagName("input");
-//     for (var i = 0; i < inputs.length; i++) {
-//         data[inputs[i].name] = inputs[i].value;
-//     }
-// });
+var search = document.getElementById('search');
+var products = document.querySelectorAll('.prod');
+var productsName = document.querySelectorAll('.productsName');
+var btn = document.getElementById('done');
+
+btn.addEventListener('click', () => {
+    console.log(1);
+    for (var i in products) {
+        if (search.value == productsName[i].innerHTML) {
+            products[i].classList.remove('hidden');
+        } else if (search.value == '') {
+            products[i].classList.remove('hidden');
+        } else if (search.value != productsName[i].innerHTML)
+            products[i].classList.add('hidden');
+    }
+});
