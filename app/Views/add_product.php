@@ -52,3 +52,6 @@
 </div>
 
 
+<script src="<?=URLROOT?>js/script.js" ></script>
+
+

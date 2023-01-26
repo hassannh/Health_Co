@@ -5,6 +5,7 @@ document.getElementById("addNew").addEventListener("click", () => {
     html +='<h3 class="col-md-12">Add another product</h3>'
 
 
+
     html += '<div class="col-md-12 mt-3">'
     html +=  '<input style="width: 50%;" class="form-control" type="text" name="name[1]" placeholder="product Name" required>'
     html +=' </div>'
@@ -41,19 +42,13 @@ document.getElementById("addNew").addEventListener("click", () => {
 
 
 
-var search = document.getElementById('search');
-var products = document.querySelectorAll('.prod');
-var productsName = document.querySelectorAll('.productsName');
-var btn = document.getElementById('done');
+// for(let i=0 ;i<=10;i++){
+//     if(i % 2 == 0){
+//         console.log(i);
+//     }
+// }
 
-btn.addEventListener('click', () => {
-    console.log(1);
-    for (var i in products) {
-        if (search.value == productsName[i].innerHTML) {
-            products[i].classList.remove('hidden');
-        } else if (search.value == '') {
-            products[i].classList.remove('hidden');
-        } else if (search.value != productsName[i].innerHTML)
-            products[i].classList.add('hidden');
-    }
-});
+
+
+
+

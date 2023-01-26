@@ -13,10 +13,13 @@
 
 <br>
 <br>
-<div class="d-flex ml-4">
-  <input type="search" name="search" id="search" class="form-control w-auto" >
-  <button class="btn btn-primary" type="button" id="done">search</button>
-</div>
+
+<form class="pt-5">
+    <label for="default-search" class="">Search</label>
+    <div class="d-flex ml-4">
+        <input type="search" id="search" class="form-control w-auto" placeholder="Search">
+    </div>
+</form>
 
 
 <h1 class="text-center push">Manage Products</h1>
@@ -39,7 +42,9 @@
 
         <tr class="prod">
           <td><?php echo $products['ID_product']; ?></td>
-          <td class="productsName"><?php echo $products['name']; ?></td>
+          <td>
+            <p class="productsName"><?php echo $products['name']; ?></p>
+          </td>
           <td><?php echo $products['price']; ?></td>
           <td><?php echo $products['date']; ?></td>
           <td><?php echo $products['quantity']; ?></td>
@@ -58,3 +63,5 @@
   </div>
   <a href="<?= URLROOT ?>Pages/add_product" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New Item</a>
 </div>
+
+<script src="<?=URLROOT?>js/search.js" ></script>

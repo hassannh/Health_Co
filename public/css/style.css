@@ -45,7 +45,9 @@
     top: 20px;
     opacity: 0.1;
 }
-
+.hidden {
+    display: none;
+}
 .l-bg-cyan {
     background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
     color: #fff;

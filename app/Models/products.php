@@ -13,11 +13,9 @@ class products{
 
 public function getproduct()
     {
-       
         $this->db->query("SELECT * FROM products");
         $this->db->execute();
         return $this->db->fetchAll();
-      
     }
 
     public function get_one_product($id)
@@ -30,30 +28,13 @@ public function getproduct()
     }
 
 
-    // public function insertproduct($name,$price ,$quantity,$picture ,$description)
-    // {
-       
-    //     $sql = "INSERT INTO products (name ,price, quantity, Picture, Description ) VALUES (:name, :price, :quantity,:picture, :description)";
-    //     $this->db->query($sql);
-    //     $this->db->bind(':name',$name);
-    //     $this->db->bind(':price',$price);
-    //     $this->db->bind(':quantity',$quantity);
-    //     $this->db->bind(':picture',$picture);
-    //     $this->db->bind(':description',$description);
-    //     $bool = $this->db->execute();
-    //     if($bool){
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
+
 
     function insertproduct($name, $price, $quantity,$description,$picture)
     {
         $this->db->query("INSERT INTO `products` (name ,price, quantity, Description,picture ) VALUES (:name, :price, :quantity, :description,:picture)");
         $this->db->bind(":name", $name);
         $this->db->bind(":price", $price);
-        // $this->db->bind(":date", $date);
         $this->db->bind(":quantity", $quantity);
         $this->db->bind(":description", $description);
         $this->db->bind(":picture", $picture);
